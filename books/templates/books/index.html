@@ -1,0 +1,14 @@
+{% extends 'books/base.html' %}
+
+{% block title %}
+All Books
+{% endblock title %}
+
+{% comment %} Interacting with data {% endcomment %}
+{% block body %}
+    <ul>
+        {% for book in books %}
+        <li><a href="{{ book.get_absolute_url }}">{{ book.title }} </a> (Rating: {{ book.rating }})</li>
+        {% endfor %}
+    </ul>
+{% endblock body %}
