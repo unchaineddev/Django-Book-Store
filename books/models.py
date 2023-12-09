@@ -21,9 +21,9 @@ class Book(models.Model):
         return reverse("book_num", args=[self.slug])
 
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)   # adding slug & overwrite save
-        super().save(*args, **kwargs)  # make sure it is saved automatically.
+    # def save(self, *args, **kwargs):
+    #     self.slug = slugify(self.title)   # adding slug & overwrite save
+    #     super().save(*args, **kwargs)  # make sure it is saved automatically.
     
 
     def __str__(self):

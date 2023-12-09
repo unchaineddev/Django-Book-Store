@@ -4,4 +4,13 @@ from django.contrib import admin
 
 from .models import Book
 
-admin.site.register(Book)
+
+# set various settings
+class BookAdmin(admin.ModelAdmin):
+    # readonly_fields = ("slug",)  # comment this if u want pre-populated field
+    prepopulated_fields = {"slug": ("title",)}
+    list_filter = ("author", "rating",)  # filtering data
+    list_display = ("author", "title",)  # display data
+
+
+admin.site.register(Book, BookAdmin)
