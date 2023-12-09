@@ -13,7 +13,7 @@ class Book(models.Model):
     author = models.CharField(max_length=50)
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     is_best_selling = models.BooleanField(default=False)
-    slug = models.SlugField(default="", null=False, db_index=True) # Harry Potter 1 => harry-potter-1
+    slug = models.SlugField(default="", blank=True, null=False, db_index=True) # Harry Potter 1 => harry-potter-1
     
 
     # If you want to use the url 
