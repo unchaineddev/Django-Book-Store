@@ -5,6 +5,7 @@ from django.contrib import admin
 from .models import Book
 from .models import Author
 from .models import Address
+from .models import Country
 
 # set various settings
 class BookAdmin(admin.ModelAdmin):
@@ -17,3 +18,4 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(Book, BookAdmin)
 admin.site.register(Author)
 admin.site.register(Address)
+admin.site.register(Country)
