@@ -3,7 +3,8 @@ from django.contrib import admin
 # Register your models here.
 
 from .models import Book
-
+from .models import Author
+from .models import Address
 
 # set various settings
 class BookAdmin(admin.ModelAdmin):
@@ -14,3 +15,5 @@ class BookAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Book, BookAdmin)
+admin.site.register(Author)
+admin.site.register(Address)
